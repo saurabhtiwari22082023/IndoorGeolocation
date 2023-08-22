@@ -33,12 +33,12 @@
 
                 styleAPIVersion: '2022-09-01-preview',
                 
-                mapConfiguration: '36f0324d-b1fa-359c-2136-14986240df66',
+                mapConfiguration: 'dd830ea6-a405-2772-cc5b-890eb1ac3740',
                
                 authOptions: {
                    
                     authType: 'subscriptionKey',
-                    subscriptionKey: '21xWtV5HdcNvfOIV0fd1oYJJAWC1fx9tW8dwCA9WA3o'
+                    subscriptionKey: 'RhJezZDXmixIxBTyTIIgjxMAijq-5XsH8tQqD5YGcwU'
                 }
             });
 
@@ -64,6 +64,7 @@
                     //TIP: altitude? in meters, speed? in meters/second and heading? in degrees are also potential properties of geoPosition.coords
 
                     if (!userShape) {
+                        console.log(userPosition);
                         //Create a shape to show the users position and add it to the data source.
                         userShape = new atlas.Shape(new atlas.data.Feature(new atlas.data.Point(userPosition), geoPosition));
                         datasource.add(userShape);
