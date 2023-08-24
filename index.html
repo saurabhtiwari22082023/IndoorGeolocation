@@ -22,9 +22,6 @@
     </style>
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js"></script>
 
-    <!-- Add reference to the animation module. -->
-    <script src="azure-maps-animations.min.js"></script>
-
     <script>
         var map, watchId, datasource, userShape;
 
@@ -78,9 +75,8 @@
                         userShape = new atlas.Shape(new atlas.data.Feature(new atlas.data.Point(userPosition), geoPosition));
                         datasource.add(userShape);
                     } else {
-                        // Animate the movement of the user's position.
-                        atlas.animations.flyTo(map, userPosition, { duration: 4000 }); // Adjust duration as needed
-                        userShape.setCoordinates(userPosition);
+                         userShape.setCoordinates(userPosition);
+                         userShape.setProperties(geoPosition);
                     }
 
                     //Center the map on the users position.
